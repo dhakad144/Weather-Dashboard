@@ -1,0 +1,188 @@
+:root {
+    --night1: yellow;
+    --night2: rgb(13, 255, 0);
+    --night3: #000;
+    --day1: #1E3A8A;
+    --day2: rgb(13, 255, 0);
+    --day3: #ffffff;
+    --primary1: var(--night1);
+    --primary2: var(--night2);
+    --primary3: var(--night3);
+}
+
+.background{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url(/static/images/night.jpg);
+    z-index: -1;
+}
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--primary1);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+header{
+    width: 100%;
+    font-size: xx-large;
+    text-align: center;
+}
+
+.search{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.search-div{
+    width: 60%;
+    backdrop-filter: blur(50px);
+    display: flex;
+    justify-content: center;
+    
+}
+.search-form{
+    width: clamp(400px,100%,500px);
+    height: 200px;
+    display: grid;
+    grid-template-rows: 50px 40px 60px 40px;
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+.search-form input,.search-form select{
+    outline: none;
+    border-radius:10px ;
+    width: 100%;
+    height: 30px;
+    border: 2px solid var(--primary1);
+    color: var(--day);
+    background-color: transparent;
+}
+
+
+
+.search-form button{
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    color: var(--primary1);
+}
+.search-form button:focus,.search-form input:focus,.search-form select:focus{
+    box-shadow: 0 0 10px 1px var(--primary1);
+}
+.search-form option{
+    background-color: var(--primary1);
+    color: var(--primary3);
+}
+.search-form h1{
+    margin: 0;
+}
+.content{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content-div{
+    backdrop-filter: blur(50px);
+    width: 60%;
+    height: fit-content;
+    margin: 0;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 1px dashed;
+    border-color: var(--primary1);
+    /* background-image: url(/static/images/stars.png); */
+
+}
+.content-div h1{
+    font-size: clamp(1rem,3vw,2rem);
+    /* font-size: xx-large; */
+}
+.weather{
+    display: grid;
+    grid-template-columns: clamp(50px,16vw,186px) 20px auto;
+}
+.weather-icon{
+    width: clamp(50px,16vw,186px);
+    height: clamp(50px,16vw,186px);
+}
+.weather img{
+    width: 100%;
+    width: 100%;
+}
+.temp{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    
+}
+.temp-value{
+    display: flex;
+    align-items: baseline;
+    justify-content: right;
+}
+.temp-value h2{
+    /* font-size:70px ; */
+    font-size:clamp(1rem,4vw,3rem) ;
+    
+    margin: 0;
+}
+.temp-value li{
+    float: right;
+    list-style: none;
+    font-size: 20px ;
+    
+}
+span{
+    display: flex;
+    gap: 20px;
+}
+span li{
+    font-size: clamp(.5rem, 6vw, 1rem);
+}
+span i{
+    font-size: clamp(.5rem, 6vw, 1rem);
+    color: var(--primary2);
+}
+.visibility-value {
+    
+    display: flex;
+    align-items: baseline;
+    /* justify-content: right; */
+}
+.visibility-value h2{
+
+    /* font-size:70px ; */
+    font-size:clamp(1rem,6vw,6rem) ;
+    margin: 0;
+}
+.wind{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.compass{
+    width: clamp(84px,26vw,200px);
+    height: clamp(84px,26vw,200px);
+    /* width: 200px;
+    height: 200px; */
+    /* background-color: red; */
+}
+.compass-needle{
+    clip-path: polygon(53% 16%, 68% 38%, 57% 39%, 56% 80%, 49% 80%, 50% 38%, 37% 38%);
+    background-color: var(--primary1);
+    width: 100%;
+    height: 100%;
+    /* transform: rotate(0deg); */
+}
+@media screen and (min-width: 0px) and (max-width: 430px){    
+    span{
+        flex-direction: column;
+    }
+}
